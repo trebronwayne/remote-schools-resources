@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Remote Schools Resource Catalog",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "title",
+      "publisher",
+      "resource_type",
+      "download_url",
+      "source_url",
+      "provider_url",
+      "rights_status",
+      "redistribution",
+      "last_checked"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "publisher": {
+        "type": "string"
+      },
+      "level": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "subject": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "resource_type": {
+        "enum": [
+          "exam_paper",
+          "exam_collection",
+          "resource_book",
+          "syllabus",
+          "teacher_support",
+          "other"
+        ]
+      },
+      "year": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "period": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "download_url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "source_url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "provider_url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "source_path": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "source_version": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "file_size_bytes": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 0
+      },
+      "rights_status": {
+        "enum": [
+          "all_rights_reserved",
+          "not_stated",
+          "unverified",
+          "permission_granted",
+          "open_license",
+          "public_domain"
+        ]
+      },
+      "redistribution": {
+        "enum": [
+          "link_only",
+          "mirror_permitted",
+          "not_allowed"
+        ]
+      },
+      "rights_basis": {
+        "type": "string"
+      },
+      "last_checked": {
+        "type": "string",
+        "format": "date"
+      }
+    },
+    "additionalProperties": false
+  }
+}
